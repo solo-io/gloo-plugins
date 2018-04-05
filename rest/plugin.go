@@ -104,7 +104,9 @@ func createTransformationForRestFunction(upstreams []*v1.Upstream) transformatio
 				},
 			}
 		} else {
-			template.BodyTransformation = &transformation.TransformationTemplate_Passthrough{}
+			template.BodyTransformation = &transformation.TransformationTemplate_Passthrough{
+				Passthrough : &transformation.Passthrough{},
+			}
 		}
 
 		return template, nil
